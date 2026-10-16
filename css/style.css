@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #e94560;
+  --card: #1a1a2e;
+  --text: #eaeaea;
+  --muted: #9a9ab0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f0f1a, #1f1b3a);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.player-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.player-card,
+.playlist-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 340px;
+  transition: transform 0.3s ease;
+}
+
+.player-card {
+  text-align: center;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Cover */
+.cover {
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.cover:hover {
+  transform: scale(1.03);
+}
+
+/* Song info */
+.song-info {
+  margin: 18px 0;
+}
+
+.song-info h1 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.song-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Range inputs */
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin: 20px 0;
+}
+
+.btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.btn-play {
+  background: var(--accent);
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-play:hover {
+  background: #ff5a75;
+  color: #fff;
+}
+
+/* Volume */
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Playlist */
+.playlist-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+#playlist {
+  list-style: none;
+}
+
+#playlist li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+#playlist li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#playlist li.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .cover {
+    width: 180px;
+    height: 180px;
+  }
+}
